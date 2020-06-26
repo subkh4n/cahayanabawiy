@@ -1,0 +1,873 @@
+@font-face {
+    font-family: 'quicksand';
+    src: url(../fonts/Quicksand/quicksand-regular-webfont.woff) format('woff');
+    src: url(../fonts/Quicksand/quicksand-regular-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'beyond';
+    src: url(../fonts/Beyond/beyond_the_mountains-webfont.woff) format('woff');
+    src: url(../fonts/Beyond/beyond_the_mountains-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+body {
+    font-family: 'quicksand', cursive, sans-serif;
+}
+
+.logo {
+    font-family: 'Beyond', cursive, sans-serif;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    background-image: linear-gradient(90deg, #0097e6, #8c7ae6);
+    opacity: 0.95;
+    z-index: 998;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+/* navbar */
+
+nav {
+    height: 9vh;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+}
+
+nav .logo {
+    color: #f1f2f7;
+    display: flex;
+    font-size: 23px;
+    transform: translateX(-100rem);
+    animation: SlideIn 0.5s forwards;
+}
+
+nav ul {
+    display: flex;
+    /* list-style: none; */
+    /* width: 40%; */
+    /* justify-content: space-around; */
+}
+
+nav ul li {
+    list-style: none;
+    transform: translateX(100rem);
+    animation: SlideIn 0.5s forwards;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    margin: 0 30px;
+    padding: 3px;
+}
+
+nav ul li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 1s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    transform: scaleX(0);
+    z-index: 999;
+    transition: all .5s;
+}
+
+.nav-links li a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-links li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.nav-links li a:hover::before,
+.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes SlideIn {
+    from {}
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* Slider */
+
+slider {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    position: relative;
+}
+
+slider>* {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    animation: slide 12s infinite;
+    overflow: hidden;
+}
+
+slide:nth-child(1) {
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(../img/slides/view1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(2) {
+    animation-delay: 2s;
+    background-image: url(../img/slides/view2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(3) {
+    animation-delay: 5s;
+    background-image: url(../img/slides/view3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide:nth-child(4) {
+    animation-delay: 8s;
+    background-image: url(../img/slides/view4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+slide h1 {
+    display: inline-block;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 250px;
+    font-size: 3em;
+    font-weight: lighter;
+}
+
+slide p {
+    display: inline-block;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding-top: 10px;
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+        width: 100%;
+    }
+    5% {
+        left: 0%
+    }
+    25% {
+        left: 0%;
+    }
+    30% {
+        left: -100%;
+        width: 100%;
+    }
+    30.0001% {
+        left: -100%;
+        width: 0%;
+    }
+    100% {
+        left: 100%;
+        width: 0%;
+    }
+}
+
+
+/* KTI */
+
+#kti {
+    background-color: rgb(243, 239, 239);
+    padding: 50px 0;
+}
+
+#kti h2 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.purple {
+    color: #8854d0;
+    font-weight: bold;
+}
+
+#kti .kti-container {
+    display: flex;
+    margin: 0 50px;
+    justify-content: center;
+    flex: 1;
+}
+
+.kti-card {
+    width: 20%;
+    border: 1px solid rgb(216, 213, 213);
+    margin: 15px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 25px;
+    background-color: #fff;
+    transition: .3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.kti-card:hover {
+    margin-top: 25px;
+    background-color: #9c88ff;
+    color: #fff;
+}
+
+.kti-card .image img {
+    width: 100%;
+    height: 100px;
+    object-position: center;
+    object-fit: none;
+}
+
+.kti-card .caption {
+    text-align: center;
+}
+
+
+/* Content */
+
+main {
+    overflow: auto;
+}
+
+.container {
+    background-color: #fff;
+}
+
+.subtitle {
+    line-height: 2.5em;
+    font-size: 1.5em;
+    color: #8854d0;
+    text-align: center;
+}
+
+
+/* Tentang */
+
+#tentang {
+    height: 500px;
+    padding: 25px;
+}
+
+#tentang-content img {
+    width: 50%;
+    float: right;
+}
+
+#tentang-content p {
+    float: left;
+    width: 50%;
+    padding-left: 70px;
+    padding-top: 20px;
+}
+
+
+/* Destinasi */
+
+#destinasi {
+    padding: 25px;
+}
+
+.galeri {
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.thumbnail {
+    position: relative;
+    width: 24%;
+    height: 320px;
+    display: flex;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-title {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.thumbnail-title span {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 140px;
+    line-height: 1.5em;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: .4s;
+    background-image: repeating-linear-gradient(-90deg, #8c7ae6, #0097e6);
+    z-index: 2;
+}
+
+.thumbnail:hover span {
+    opacity: 0.9;
+    transform: scale(1);
+}
+
+
+/* Kuliner */
+
+#kuliner-content {
+    height: 500px
+}
+
+#kuliner-content img {
+    float: left;
+    width: 50%;
+}
+
+#kuliner-content p {
+    float: right;
+    width: 50%;
+    padding-right: 70px;
+    padding-top: 30px;
+}
+
+.blue {
+    color: #0097e6;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Kuliner Card */
+
+#box-kuliner {
+    width: 100%;
+    padding: 10px 0;
+}
+
+#box-kuliner h3 {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.kuliner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+}
+
+.kuliner-card {
+    position: relative;
+    height: 150px;
+    max-width: 250px;
+    background-color: #a191f3;
+    margin: 10px 10px 50px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    transition: .4s ease-in-out;
+}
+
+.kuliner-card:hover {
+    height: 350px;
+}
+
+.kuliner-image {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    top: -60px;
+    left: 10px;
+    z-index: 1;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+}
+
+.kuliner-image img {
+    border-radius: 3px;
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+}
+
+.kuliner-caption {
+    position: relative;
+    margin-top: -100px;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.kuliner-caption h4 {
+    padding-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.kuliner-card:hover .kuliner-caption {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: .3s;
+}
+
+
+/* Budaya */
+
+#budaya {
+    width: 100%;
+    padding: 20px;
+}
+
+.budaya-wrapper {
+    width: 80%;
+    height: fit-content;
+    margin: 25px auto;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+
+.budaya-wrapper:hover {
+    transform: scale(1.03);
+}
+
+.budaya-image {
+    flex: 2;
+}
+
+.budaya-image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    object-fit: cover;
+}
+
+.budaya-content {
+    padding: 30px;
+    flex: 3;
+}
+
+.budaya-content h3 {
+    text-align: left;
+}
+
+/* Profile Team */
+
+.heading {
+    text-align: center;
+    position: relative;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    font-size: 28px;
+}
+
+.heading::after {
+    content: "";
+    width: 18rem;
+    height: .2rem;
+    background-image: linear-gradient(90deg, #0097e6, #8c7ae6);
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+}
+
+
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    /* flex-direction: column; */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card {
+    width: 22%;
+    background-color: #ebeef8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 15px;
+    box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.2);
+    transition: transform .5s;
+}
+
+.card .card-img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.profile-img {
+    width: 15vh;
+    height: 15vh;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -20px;
+    z-index: 995;
+    border: 5px solid #ebeef8;
+}
+
+.card h1 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 10px 0 0 0;
+}
+
+.job-title {
+    color: #777;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    padding: 4px 0
+}
+
+.card .btn {
+    padding: 10px 20px;
+    background-image: linear-gradient(90deg, #0097e6, #8c7ae6);
+    border-radius: 2rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    color: #eee;
+    font-size: 12px;
+    transition: all .5s;
+    text-decoration: none;
+}
+
+.card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.card .btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card:nth-child(1) {
+    animation: fadeIn .5s .1s backwards;
+}
+
+.card:nth-child(2) {
+    animation: fadeIn .5s .5s backwards;
+}
+
+.card:nth-child(3) {
+    animation: fadeIn .5s 1s backwards;
+}
+
+.card:nth-child(4) {
+    animation: fadeIn .5s 1.5s backwards;
+}
+
+.card:nth-child(5) {
+    animation: fadeIn .5s 2s backwards;
+}
+
+.card:hover {
+    transform: scale(1.05)
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 10vh;
+    width: 100%;
+    background-image: linear-gradient(90deg, #0097e6, #8c7ae6);
+    color: #ffffff;
+}
+
+footer .container {
+    display: flex;
+    background-image: linear-gradient(90deg, #0097e6, #8c7ae6);
+    padding: 15px;
+    justify-content: space-around;
+}
+
+.side-left {
+    width: 70%;
+    padding: 5px;
+}
+
+footer .logo h1 {
+    font-size: 24px;
+    padding: 24px;
+    margin-left: 30px;
+    font-weight: lighter;
+}
+
+.sosmed {
+    margin-left: 100px;
+}
+
+.sosmed a {
+    margin: 0 10px;
+}
+
+.sosmed img {
+    width: 20px;
+}
+
+.side-right {
+    width: 30%;
+    display: flex;
+    padding: 5px;
+    /* text-align: center; */
+    margin-top: 20px;
+}
+
+.all ul {
+    line-height: 30px;
+}
+
+.all ul li {
+    list-style-type: none;
+}
+.all ul li a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.all a:hover {
+    font-weight: bold;
+}
+
+.feature {
+    width: 15%;
+    margin-left: auto;
+}
+
+.legal {
+    width: 15%;
+    margin-left: auto;
+    margin-right: 10vh;
+}
+
+footer p {
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1200px) {
+    .budaya-image {
+        flex: 1;
+    }
+
+    .budaya-content {
+        flex: 1;
+    }
+    .card-wrapper {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 27%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #kti .kti-container {
+        flex-wrap: wrap;
+    }
+    .kti-card {
+        width: 40%;
+    }
+    #tentang-content img,
+    #tentang-content p,
+    #kuliner-content img,
+    #kuliner-content p {
+        width: 100%;
+    }
+    #tentang-content p,
+    #kuliner-content p {
+        padding: 25px;
+    }
+    .thumbnail {
+        width: 48%;
+    }
+    .budaya-wrapper {
+        width: 90%;
+    }
+    .budaya-image {
+        flex: 2;
+    }
+    .budaya-content {
+        flex: 2;
+    }
+    .card {
+        width: 33%;
+    }
+    .side-left,
+    .side-right {
+        width: 50%;
+    }
+  
+}
+
+
+/* Ukuran Tablet */
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        width: 50%;
+    }
+    #kti .kti-container {
+        flex-direction: column;
+    }
+    .kti-card {
+        width: 100%;
+    }
+    .thumbnail {
+        width: 100%;
+    }
+    .budaya-wrapper {
+        flex-direction: column;
+    }
+    .budaya-image img {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 5px;
+        height: 250px;
+    }
+    .card {
+        width: 40%;
+    }
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .side-right,
+    .side-left {
+        width: 100%;
+    }
+    .sosmed,
+    .logo {
+        margin-left: 0;
+    }
+    .feature,
+    .legal {
+        width: 100%;
+    }
+    .legal {
+        margin-right: 0;
+    }
+}
+
+
+/* Ukuran mobile */
+
+@media screen and (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        display: none;
+    }
+    slide h1 {
+        font-size: 2.5em;
+    }
+    slide p {
+        font-size: 0.9em;
+    }
+    .card {
+        width: 75%;
+    }
+}
